@@ -1,0 +1,15 @@
+{
+  "name": "bytechefai",
+  "version": "0.1.0",
+  "description": "AI Fridge Chef progressive web app prototype.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^4.18.4",
+    "sharp": "^0.34.5"
+  },
+  "license": "MIT"
+}

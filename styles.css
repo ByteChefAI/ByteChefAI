@@ -1,0 +1,366 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #020617;
+  color: #e2e8f0;
+  accent-color: #38bdf8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, rgba(56, 189, 248, 0.2), transparent 28%),
+    radial-gradient(circle at right, rgba(34, 197, 94, 0.15), transparent 22%),
+    linear-gradient(180deg, #020617 0%, #0f172a 100%);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  border-radius: 999px;
+  padding: 0.9rem 1.6rem;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+button.primary {
+  background: linear-gradient(135deg, #38bdf8 0%, #22c55e 100%);
+  color: #020617;
+}
+
+button.secondary {
+  background: rgba(148, 163, 184, 0.12);
+  color: #e2e8f0;
+}
+
+.app-shell {
+  width: min(1200px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2rem 0 3rem;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  border-radius: 1.5rem;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(18px);
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.upload-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.photo-status {
+  padding: 0.95rem 1rem;
+  border-radius: 1rem;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.upload-controls button {
+  width: 100%;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.brand-mark {
+  width: 3rem;
+  height: 3rem;
+  display: grid;
+  place-items: center;
+  font-size: 1.5rem;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, #22c55e, #38bdf8);
+}
+
+.status {
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.status.online {
+  background: rgba(34, 197, 94, 0.14);
+  color: #a7f3d0;
+}
+
+.status.offline {
+  background: rgba(248, 113, 113, 0.14);
+  color: #fecaca;
+}
+
+main {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.card {
+  background: rgba(15, 23, 42, 0.88);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: 1.75rem;
+  padding: 1.75rem;
+  backdrop-filter: blur(16px);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  align-items: center;
+  gap: 2rem;
+}
+
+.hero h2 {
+  margin: 0;
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1.05;
+}
+
+.hero p {
+  max-width: 44rem;
+  margin: 1rem 0 1.5rem;
+  color: #cbd5e1;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.hero-image {
+  width: min(100%, 18rem);
+  justify-self: end;
+  filter: drop-shadow(0 24px 40px rgba(15, 23, 42, 0.4));
+}
+
+.upload-card {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.image-preview {
+  min-height: 14rem;
+  padding: 1rem;
+  border: 1px dashed rgba(148, 163, 184, 0.28);
+  border-radius: 1.25rem;
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+  background: rgba(30, 41, 59, 0.55);
+}
+
+.upload-card {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.upload-controls {
+  display: grid;
+  gap: 1rem;
+}
+
+.upload-controls textarea,
+.upload-controls select {
+  width: 100%;
+}
+
+.hero-actions,
+.upload-actions {
+  display: grid;
+  gap: 0.9rem;
+}
+
+@media (max-width: 860px) {
+  .hero-actions,
+  .upload-actions,
+  .topbar-actions {
+    width: 100%;
+  }
+}
+
+.image-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+#previewLabel {
+  color: #94a3b8;
+}
+
+.upload-controls {
+  display: grid;
+  gap: 1rem;
+}
+
+textarea {
+  width: 100%;
+  min-height: 7rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  background: rgba(15, 23, 42, 0.76);
+  color: #e2e8f0;
+  resize: vertical;
+}
+
+select {
+  width: 100%;
+  border-radius: 1rem;
+  padding: 1rem;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  background: rgba(15, 23, 42, 0.76);
+  color: #e2e8f0;
+}
+
+.recipe-output {
+  min-height: 14rem;
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  background: rgba(8, 16, 28, 0.85);
+  border: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.recipe-panel {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.recipe-panel > div {
+  padding: 1rem;
+  border-radius: 1.25rem;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.recipe-panel pre {
+  margin: 0;
+  white-space: pre-wrap;
+  color: #cbd5e1;
+}
+
+.cooking-mode-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.step-label {
+  display: inline-block;
+  margin-bottom: 0.55rem;
+  font-weight: 700;
+  color: #38bdf8;
+}
+
+.cooking-tip {
+  margin-top: 1rem;
+  color: #94a3b8;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.premium-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  margin-top: 1rem;
+}
+
+.premium-grid div {
+  padding: 1rem;
+  border-radius: 1.2rem;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.08);
+}
+
+.premium-signal {
+  margin-top: 1.5rem;
+  color: #94a3b8;
+}
+
+.footer {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #94a3b8;
+}
+
+@media (max-width: 860px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-image {
+    justify-self: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .topbar,
+  .card {
+    padding: 1.25rem;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  button {
+    width: 100%;
+  }
+}

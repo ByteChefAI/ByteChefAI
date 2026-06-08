@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0f172a" />
+  <meta name="description" content="AI Fridge Chef - Meal and Budget Planner PWA" />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="icon" href="/icons/ByteChefAI-192.png" />
+  <link rel="apple-touch-icon" href="/icons/ByteChefAI-192.png" />
+  <title>AI Fridge Chef</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark">🍳</div>
+        <div>
+          <h1>AI Fridge Chef</h1>
+          <p>Meal planner, recipe generator, and smart cooking mode.</p>
+        </div>
+      </div>
+      <div class="topbar-actions">
+        <button type="button" id="installButton" class="secondary hidden">Install app</button>
+        <div id="statusBadge" class="status online">Online</div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero card">
+        <div>
+          <h2>What's for dinner?</h2>
+          <p>Snap your pantry, choose a plan, and get an instant recipe with step-by-step cooking guidance.</p>
+          <div class="hero-actions">
+            <button type="button" id="uploadButton">Upload fridge photo</button>
+            <button type="button" id="recipeButton">Generate recipe</button>
+          </div>
+        </div>
+        <img src="icons/icon-512.svg" alt="AI Fridge Chef" class="hero-image" />
+      </section>
+
+      <section class="upload card">
+        <h3>Step 1: Add your ingredients</h3>
+        <p>Snap a fridge photo and let AI identify your ingredients automatically.</p>
+        <div class="upload-card">
+          <div class="image-preview" id="previewContainer">
+            <span id="previewLabel">Photo preview</span>
+            <img id="previewImage" alt="Uploaded ingredients preview" />
+          </div>
+          <div class="upload-controls">
+            <input id="photoInput" type="file" accept="image/*" capture="environment" hidden />
+            <div class="upload-actions">
+              <button type="button" id="uploadButton">Snap fridge photo</button>
+              <button type="button" id="clearPhotoButton" class="secondary hidden">Clear photo</button>
+            </div>
+            <div id="recognitionStatus" class="photo-status">Photo recognition will appear here after upload.</div>
+            <textarea id="ingredientsInput" placeholder="Ingredients will appear automatically after a photo upload"></textarea>
+            <label for="dietSelect">Dietary preference</label>
+            <select id="dietSelect">
+              <option value="balanced">Balanced</option>
+              <option value="keto">Keto</option>
+              <option value="vegan">Vegan</option>
+              <option value="gluten-free">Gluten-free</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <section class="recipe card">
+        <div class="card-header">
+          <h3>Your instant recipe</h3>
+          <button type="button" id="cookingModeButton" class="secondary">Show cooking mode</button>
+        </div>
+        <div id="recipeOutput" class="recipe-output">
+          <p>Upload a photo or enter your ingredients, then click <strong>Generate recipe</strong>.</p>
+        </div>
+      </section>
+
+      <section class="premium card">
+        <div class="card-header">
+          <h3>Premium features</h3>
+          <button type="button" id="subscribeButton" class="primary">Start free trial</button>
+        </div>
+        <div class="premium-grid">
+          <div>
+            <h4>Grocery list</h4>
+            <p>Turn recipes into shopping-ready lists instantly.</p>
+          </div>
+          <div>
+            <h4>Calorie tracking</h4>
+            <p>Estimate nutrition for every meal and stay on budget.</p>
+          </div>
+          <div>
+            <h4>Custom meal plans</h4>
+            <p>Choose keto, vegan, or balanced plans based on your goals.</p>
+          </div>
+        </div>
+        <div id="premiumSignal" class="premium-signal">Premium is inactive. Upgrade to unlock full planner features.</div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="footer card">
+    <p>AI Fridge Chef is a progressive web app prototype. This version uses a fake subscription framework and offline caching.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
