@@ -8,7 +8,8 @@ const ASSETS_TO_CACHE = [
   '/service-worker.js',
   '/offline.html',
   '/icons/ByteChefAI-192.png',
-  '/icons/ByteChefAI-512.png'
+  '/icons/ByteChefAI-512.png',
+  '/icons/ByteChefAI.png'
 ];
 
 self.addEventListener('install', (event) => {
